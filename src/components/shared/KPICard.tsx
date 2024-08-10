@@ -4,7 +4,6 @@ import { KPICardDetails } from "@/types";
 import { TrendingDown, TrendingUp, Users } from "lucide-react";
 
 const KPICard = ({ cardDetails }: { cardDetails: KPICardDetails }) => {
-  console.log(cardDetails);
   return (
     <Card className={`p-5 h-full`}>
       <CardContent className="p-0">

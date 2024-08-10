@@ -19,11 +19,26 @@ export interface KPICardDetails {
   duration?: "Yesterday" | "Past Week" | "Past Month";
 }
 
-export interface UsersType {
+export interface User {
   id: number;
   username: string;
   email: string;
   name: string;
   status: "active" | "banned";
   lastActive?: string; // Date and time in ISO format
-};
+}
+
+export interface Post {
+  id: number;
+  author: {
+    username: string;
+    name: string;
+    avatar: string;
+  };
+  content: string;
+  timestamp: string;
+  likes: number;
+  comments: number;
+  media?: Array<string>;
+  status: "published" | "hidden" ;
+}

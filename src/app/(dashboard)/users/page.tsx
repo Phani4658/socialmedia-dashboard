@@ -1,6 +1,6 @@
 import React from "react";
 import { DataTable } from "../../../components/ui/data-table";
-import { columns } from "../../../components/ui/columns";
+import { userColumns } from "../../../components/ui/columns";
 import { userKPICards, usersList } from "@/constants";
 import KPICard from "@/components/shared/KPICard";
 import {
@@ -11,24 +11,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const recentlyActiveUsers: any = [
-  {
-    id: 1,
-    username: "johndoe",
-    email: "john@example.com",
-    name: "John Doe",
-    status: "active",
-    lastActive: "2024-08-09T14:30:00", // Date and time in ISO format
-  },
-  {
-    id: 2,
-    username: "janesmith",
-    email: "jane@example.com",
-    name: "Jane Smith",
-    status: "banned",
-    lastActive: "2024-08-09T13:45:00", // Date and time in ISO format
-  },
-];
 
 const Users = () => {
   return (
@@ -46,7 +28,7 @@ const Users = () => {
           </div>
         </CardHeader>
         <CardContent>
-          <DataTable columns={columns} data={usersList} />
+          <DataTable columns={userColumns} data={usersList} />
         </CardContent>
       </Card>
     </div>

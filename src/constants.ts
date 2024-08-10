@@ -1,12 +1,5 @@
-import { stat } from "fs";
-import {
-  Briefcase,
-  LogOut,
-  MoreHorizontal,
-  Settings,
-  Users,
-} from "lucide-react";
-import {  UsersType } from "./types";
+import { Briefcase, Users } from "lucide-react";
+import { User, Post } from "./types";
 
 enum Trend {
   Up = "Up",
@@ -74,6 +67,25 @@ export const userKPICards = [
   },
 ];
 
+export const postKPICards = [
+  {
+    title: "Total Posts",
+    currentCount: 1000,
+    percentage: -2,
+    icon: Briefcase,
+    trend: Trend.Down,
+    duration: Duration.PastWeek,
+  },
+  {
+    title: "Posts Published in Last 24 Hours",
+    currentCount: 300,
+    percentage: -5,
+    icon: Briefcase,
+    trend: Trend.Down,
+    duration: Duration.Yesterday,
+  },
+];
+
 export const recentlyActiveUsers = [
   {
     userId: 1,
@@ -126,8 +138,7 @@ export const recentlyActiveUsers = [
   },
 ];
 
-
-export const usersList:Array<UsersType> = [
+export const usersList: Array<User> = [
   {
     id: 1,
     username: "john_doe",
@@ -216,5 +227,79 @@ export const usersList:Array<UsersType> = [
     email: "bob.brown@example.com",
     lastActive: "2024-08-09T11:50:00",
   },
+];
 
-]
+export const postList: Post[] = [
+  {
+    id: 1,
+    author: {
+      username: "johndoe",
+      name: "John Doe",
+      avatar: "https://avatar.iran.liara.run/public/53",
+    },
+    content: "Had a great day exploring the city! #adventure",
+    timestamp: "2024-08-09T14:30:00",
+    likes: 120,
+    comments: 15,
+    status: "published",
+    media: [
+      "https://images.unsplash.com/photo-1489914169085-9b54fdd8f2a2?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1501555088652-021faa106b9b?q=80&w=3546&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ],
+  },
+  {
+    id: 2,
+    author: {
+      username: "janesmith",
+      name: "Jane Smith",
+      avatar: "https://avatar.iran.liara.run/public/51",
+    },
+    content:
+      "Just finished a fantastic book on modern art. Highly recommend! #reading",
+    timestamp: "2024-08-09T13:45:00",
+    likes: 95,
+    comments: 8,
+    status: "published",
+  },
+  {
+    id: 3,
+    author: {
+      username: "alicejones",
+      name: "Alice Jones",
+      avatar: "https://avatar.iran.liara.run/public/42",
+    },
+    content:
+      "Excited to start my new project on web development. Stay tuned for updates! #webdev",
+    timestamp: "2024-08-09T12:20:00",
+    likes: 150,
+    comments: 20,
+    status: "hidden",
+  },
+  {
+    id: 4,
+    author: {
+      username: "bobbrown",
+      name: "Bob Brown",
+      avatar: "https://avatar.iran.liara.run/public/18",
+    },
+    content: "Beautiful sunset at the beach today. #nature #sunset",
+    timestamp: "2024-08-09T11:50:00",
+    likes: 200,
+    comments: 30,
+    status: "published",
+  },
+  {
+    id: 5,
+    author: {
+      username: "charlieclark",
+      name: "Charlie Clark",
+      avatar: "https://avatar.iran.liara.run/public/18",
+    },
+    content:
+      "Cooked a delicious meal tonight. Here’s the recipe! #cooking #food",
+    timestamp: "2024-08-09T10:15:00",
+    likes: 80,
+    comments: 12,
+    status: "published",
+  },
+];

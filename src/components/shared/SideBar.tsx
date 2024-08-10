@@ -16,7 +16,7 @@ const sidebarItems: SidebarItems = {
   links: [
     { label: "Home", href: "/", icon: Home },
     { label: "Users", href: "/users", icon: Users },
-    { label: "Posts", href: "posts", icon: StickyNote },
+    { label: "Posts", href: "/posts", icon: StickyNote },
   ],
   extras: (
     <div className="flex flex-col gap-2">
@@ -27,6 +27,7 @@ const sidebarItems: SidebarItems = {
     </div>
   ),
 };
+
 
 export default function Sidebar() {
   const isDesktop = useMediaQuery("(min-width: 640px)", {

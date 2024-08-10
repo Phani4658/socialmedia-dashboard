@@ -1,6 +1,5 @@
 "use client";
 
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,17 +11,27 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Cookie from "js-cookie";
+import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function LoginForm() {
   const router = useRouter();
-  const onClickSignIn = (event: any) => {
+  const session = Cookies.get('isLoggedIn') === "true" ? true : false;
+  const onClickSignIn = async (event: any) => {
     event.preventDefault();
     // Perform login logic here
-    Cookie.set("isLoggedIn", "true");
+    Cookies.set("isLoggedIn", "true");
     router.push("/");
   };
+
+  useEffect(() => {
+    const session = Cookies.get('isLoggedIn') === "true" ? true : false;
+    if (session) {
+      router.push("/");
+    }
+  }, [session]);
+
   return (
     <div className="flex justify-center items-center min-h-screen">
       <Card className="w-full max-w-sm">
