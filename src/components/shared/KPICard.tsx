@@ -13,7 +13,7 @@ const KPICard = ({ cardDetails }: { cardDetails: KPICardDetails }) => {
             <h2 className="text-[#20224] text-sm font-bold opacity-70">
               {cardDetails.title}
             </h2>
-            <p className="text-4xl mt-3 font-bold text-black">
+            <p className="text-2xl xl:text-3xl mt-3 font-bold text-black">
               {cardDetails.currentCount}
             </p>
           </div>
