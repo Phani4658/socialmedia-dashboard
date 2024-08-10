@@ -18,7 +18,7 @@ export function SidebarDesktop(props: SidebarDesktopProps) {
   const pathname = usePathname();
 
   return (
-    <aside className="w-[270px] max-w-xs h-screen  left-0 top-0 z-40 border-r">
+    <aside className="w-[270px] max-w-xs h-screen sticky left-0 top-0 z-40 border-r bg-white">
       <div className="h-full px-3 py-4">
         <h3 className="mx-3 text-lg font-semibold text-foreground">Twitter</h3>
         <div className="mt-5">

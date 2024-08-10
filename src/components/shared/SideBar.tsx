@@ -1,16 +1,10 @@
 "use client";
 
 import {
-  Bell,
-  Bookmark,
   Home,
-  List,
-  Mail,
   MoreHorizontal,
   StickyNote,
-  User,
   Users,
-  Users2,
 } from "lucide-react";
 import { SidebarDesktop } from "./SidebarDesktop";
 import { SidebarItems } from "@/types";
@@ -21,7 +15,7 @@ import { SidebarMobile } from "./SidebarMobile";
 const sidebarItems: SidebarItems = {
   links: [
     { label: "Home", href: "/", icon: Home },
-    { label: "Users", href: "/users", icon: Users2 },
+    { label: "Users", href: "/users", icon: Users },
     { label: "Posts", href: "posts", icon: StickyNote },
   ],
   extras: (
