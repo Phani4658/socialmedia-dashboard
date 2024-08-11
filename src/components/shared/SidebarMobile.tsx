@@ -16,6 +16,7 @@ import { usePathname } from "next/navigation";
 import { Separator } from "../ui/separator";
 import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import Image from "next/image";
 
 interface SidebarMobileProps {
   sidebarItems: SidebarItems;
@@ -27,16 +28,30 @@ export function SidebarMobile(props: SidebarMobileProps) {
   return (
     <Sheet>
       <SheetTrigger asChild>
-        <Button size="icon" variant="ghost" className=" top-3 left-3">
-          <Menu size={20} />
-        </Button>
+        <div className="px-5 flex justify-between py-5 items-center">
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              alt="instagram dashboard"
+              height={80}
+              width={120}
+            />
+          </Link>
+          <Button size="icon" variant="ghost" className=" top-3 left-3">
+            <Menu size={20} />
+          </Button>
+        </div>
       </SheetTrigger>
       <SheetContent side="left" className="px-3 py-4">
         <SheetHeader className="flex flex-row justify-between items-center space-y-0">
-          <span className="text-lg font-semibold text-foreground mx-3">
-            Twitter
-          </span>
-          
+          <Link href="/">
+            <Image
+              src="/images/logo.png"
+              alt="instagram dashboard"
+              height={80}
+              width={120}
+            />
+          </Link>
         </SheetHeader>
         <div className="h-full">
           <div className="mt-5 flex flex-col w-full gap-1">

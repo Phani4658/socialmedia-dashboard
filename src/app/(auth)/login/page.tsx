@@ -12,12 +12,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Cookies from "js-cookie";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
 export default function LoginForm() {
   const router = useRouter();
-  const session = Cookies.get('isLoggedIn') === "true" ? true : false;
+  const session = Cookies.get("isLoggedIn") === "true" ? true : false;
   const onClickSignIn = async (event: any) => {
     event.preventDefault();
     // Perform login logic here
@@ -26,17 +27,25 @@ export default function LoginForm() {
   };
 
   useEffect(() => {
-    const session = Cookies.get('isLoggedIn') === "true" ? true : false;
+    const session = Cookies.get("isLoggedIn") === "true" ? true : false;
     if (session) {
       router.push("/");
     }
   }, [session]);
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center min-h-screen px-5">
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <CardTitle className="text-2xl">Login</CardTitle>
+          <div className="flex items-center justify-center">
+          <Image
+            src="/images/logo.png"
+            alt="Instagram"
+            height={80}
+            width={180}
+          />
+          <CardTitle className="text-2xl hidden">Login</CardTitle>
+          </div>
           <CardDescription>
             Enter your email below to login to your account.
           </CardDescription>
