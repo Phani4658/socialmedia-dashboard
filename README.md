@@ -9,9 +9,7 @@ This is a comprehensive Dashboard which has Protected Routes and Displays Users 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Features
 
@@ -54,20 +52,6 @@ npm install
 # or using pnpm
 pnpm install
 ```
-
-3. Start the development server:
-
-```bash
-# using npm
-npm start
-
-# or using pnpm
-pnpm start
-```
-
-4. Open your browser and navigate to `http://localhost:3000` to see the application running.
-
-## Usage
 
 ### Running the Development Server
 
