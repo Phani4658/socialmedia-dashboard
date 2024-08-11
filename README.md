@@ -32,7 +32,7 @@ This is a comprehensive Dashboard which has Protected Routes and Displays Users 
 ### Prerequisites
 
 - Node.js (>= 12.x)
-- npm or yarn
+- npm or pnpm
 
 ### Steps
 

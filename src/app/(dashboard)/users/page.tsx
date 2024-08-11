@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DataTable } from "../../../components/ui/data-table";
 import { userColumns } from "../../../components/ui/columns";
 import { userKPICards, usersList } from "@/constants";
