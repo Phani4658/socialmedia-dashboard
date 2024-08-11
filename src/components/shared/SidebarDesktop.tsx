@@ -9,6 +9,7 @@ import { Button } from "../ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { LogOut, MoreHorizontal, Settings } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 interface SidebarDesktopProps {
   sidebarItems: SidebarItems;
@@ -20,7 +21,9 @@ export function SidebarDesktop(props: SidebarDesktopProps) {
   return (
     <aside className="w-[270px] max-w-xs h-screen sticky left-0 top-0 z-40 border-r bg-white">
       <div className="h-full px-3 py-4">
-        <h3 className="mx-3 text-lg font-semibold text-foreground">Twitter</h3>
+        <Link href="/">
+        <Image src="/images/logo.png" alt="Logo" height={80} width={200} />
+        </Link>
         <div className="mt-5">
           <div className="flex flex-col gap-1 w-full">
             {props.sidebarItems.links.map((link, index) => (

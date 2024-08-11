@@ -53,14 +53,46 @@ export const userColumns: ColumnDef<User>[] = [
       );
     },
   },
+];
+
+export const homeUserColumns: ColumnDef<User>[] = [
   {
-    id: "actions",
-    header: "Actions",
+    accessorKey: "name",
+    header: "Name",
+  },
+  {
+    accessorKey: "username",
+    header: "Username",
+  },
+  {
+    accessorKey: "status",
+    header: "Status",
     cell: ({ row }) => {
+      const status = row.getValue("status");
+      if (status === "active") {
+        return (
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-[#4aa24e]"></div>
+            <p>Active</p>
+          </div>
+        );
+      }
       return (
-        <div className="flex gap-3 justify-center">
-          <Button>Ban</Button>
-          <Button>Delete</Button>
+        <div className="flex items-center justify-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-[#E32200]"></div>
+          <p>Banned</p>
+        </div>
+      );
+    },
+  },
+  {
+    accessorKey: "lastActive",
+    header: "Last Active",
+    cell: ({ row }) => {
+      const lastActive = new Date(row.getValue("lastActive"));
+      return (
+        <div className="flex items-center justify-center gap-2">
+          <p>{getTimeAgo(lastActive)}</p>
         </div>
       );
     },
@@ -109,7 +141,11 @@ export const postColumns: ColumnDef<Post>[] = [
         <ul>
           {media.map((link, index) => (
             <li key={link}>
-              <Link href={link} target="_blank" className="underline text-blue-500">
+              <Link
+                href={link}
+                target="_blank"
+                className="underline text-blue-500"
+              >
                 Media {index}
               </Link>
             </li>
@@ -163,16 +199,60 @@ export const postColumns: ColumnDef<Post>[] = [
       return <p>{getTimeAgo(createdAt)}</p>;
     },
   },
+];
+
+export const homePostColumns: ColumnDef<Post>[] = [
   {
-    id: "actions",
-    header: "Actions",
+    accessorKey: "author",
+    header: "Posted By",
     cell: ({ row }) => {
+      const author: author = row.getValue("author");
       return (
-        <div className="flex gap-3 justify-center">
-          <Button>Edit</Button>
-          <Button>Delete</Button>
+        <div className="flex gap-2 justify-center">
+          <Avatar className="h-5 w-5">
+            <AvatarImage src={author.avatar} />
+            <AvatarFallback>{author.name}</AvatarFallback>
+          </Avatar>
+          <span>{author.name}</span>
         </div>
       );
+    },
+  },
+  {
+    accessorKey: "status",
+    header: "Status",
+    cell: ({ row }) => {
+      const status = row.getValue("status");
+      if (status === "published") {
+        return (
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-[#4aa24e]"></div>
+            <p>Published</p>
+          </div>
+        );
+      }
+      return (
+        <div className="flex items-center justify-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-[#E32200]"></div>
+          <p>Hidden</p>
+        </div>
+      );
+    },
+  },
+  {
+    accessorKey: "likes",
+    header: "Likes",
+    cell: ({ row }) => {
+      const likes: number = row.getValue("likes");
+      return <p>{likes} Likes</p>;
+    },
+  },
+  {
+    accessorKey: "comments",
+    header: "Comments",
+    cell: ({ row }) => {
+      const comments: number = row.getValue("comments");
+      return <p>{comments} comments</p>;
     },
   },
 ];

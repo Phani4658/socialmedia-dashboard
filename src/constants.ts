@@ -86,57 +86,6 @@ export const postKPICards = [
   },
 ];
 
-export const recentlyActiveUsers = [
-  {
-    userId: 1,
-    username: "john_doe",
-    name: "John Doe",
-    email: "john.doe@example.com",
-    lastActive: "2024-08-09T14:30:00", // Date and time in ISO format
-  },
-  {
-    userId: 2,
-    username: "jane_smith",
-    name: "Jane Smith",
-    email: "jane.smith@example.com",
-    lastActive: "2024-08-09T13:45:00",
-  },
-  {
-    userId: 3,
-    username: "alice_jones",
-    name: "Alice Jones",
-    email: "alice.jones@example.com",
-    lastActive: "2024-08-09T12:20:00",
-  },
-  {
-    userId: 4,
-    username: "bob_brown",
-    name: "Bob Brown",
-    email: "bob.brown@example.com",
-    lastActive: "2024-08-09T11:50:00",
-  },
-  {
-    userId: 5,
-    username: "charlie_clark",
-    name: "Charlie Clark",
-    email: "charlie.clark@example.com",
-    lastActive: "2024-08-09T10:15:00",
-  },
-  {
-    userId: 6,
-    username: "alice_jones",
-    name: "Alice Jones",
-    email: "alice.jones@example.com",
-    lastActive: "2024-08-09T12:20:00",
-  },
-  {
-    userId: 7,
-    username: "bob_brown",
-    name: "Bob Brown",
-    email: "bob.brown@example.com",
-    lastActive: "2024-08-09T11:50:00",
-  },
-];
 
 export const usersList: Array<User> = [
   {

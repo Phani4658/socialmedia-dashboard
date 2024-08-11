@@ -42,3 +42,8 @@ export interface Post {
   media?: Array<string>;
   status: "published" | "hidden" ;
 }
+
+export interface homeTableProps {
+  tableRows: Array<string>;
+  tableColumns: Array<User> | Array<Post>;
+}

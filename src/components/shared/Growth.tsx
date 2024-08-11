@@ -18,18 +18,20 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 const chartData = [
-  { month: "January", desktop: 230 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-  { month: "June", desktop: 214 },
+  { month: "January", desktop: 1000 },
+  { month: "February", desktop: 1240 },
+  { month: "March", desktop: 1800 },
+  { month: "April", desktop: 2457 },
+  { month: "May", desktop: 2803 },
+  { month: "June", desktop: 3452 },
+  { month: "July", desktop: 3789 },
+  { month: "August", desktop: 4234 },
 ];
 
 const chartConfig = {
   desktop: {
-    label: "Desktop",
-    color: "hsl(var(--chart-1))",
+    label: "Users",
+    color: "var(--chart-1)",
   },
 } satisfies ChartConfig;
 
@@ -39,7 +41,7 @@ export function Growth() {
       <CardHeader>
         <CardTitle>Area Chart</CardTitle>
         <CardDescription>
-          Showing total visitors for the last 6 months
+          Showing user growth for the last 6 months
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -78,10 +80,10 @@ export function Growth() {
         <div className="flex w-full items-start gap-2 text-sm">
           <div className="grid gap-2">
             <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+              Trending up by 62.5% this month <TrendingUp className="h-4 w-4" />
             </div>
             <div className="flex items-center gap-2 leading-none text-muted-foreground">
-              January - June 2024
+              January - August 2024
             </div>
           </div>
         </div>
